@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SoundVibe</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2em;
+        }
+        h1 {
+            color: #1DB954;
+        }
+        button {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1em 2em;
+            border: none;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #logo {
+            width: 200px;
+            margin: 2em auto;
+        }
+        footer {
+            margin-top: 4em;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" id="logo" alt="SoundVibe Logo" />
+    <h1>Welkom bij SoundVibe</h1>
+    <p>Genereer een persoonlijke afspeellijst op basis van je stemming</p>
+    <input type="text" id="mood" placeholder="Typ je stemming..." />
+    <br/><br/>
+    <button onclick="generatePlaylist()">Genereer afspeellijst</button>
+    <p id="status"></p>
+    <div id="spotifyLink" style="margin-top: 20px;"></div>
+    <footer>
+        Een project van <a href="https://aimain.eu" target="_blank">AiMain</a>
+    </footer>
+    <script>
+        function generatePlaylist() {
+            const mood = document.getElementById("mood").value;
+            const status = document.getElementById("status");
+            const linkDiv = document.getElementById("spotifyLink");
+
+            if (!mood) {
+                status.innerText = "Vul eerst je stemming in.";
+                return;
+            }
+
+            status.innerText = "Even geduld, we maken je lijst...";
+            setTimeout(() => {
+                status.innerText = "Playlist gegenereerd!";
+                linkDiv.innerHTML = '<a href="https://open.spotify.com" target="_blank"><button>Open in Spotify</button></a>';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
