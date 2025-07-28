@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SoundVibe</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="soundvibe-logo.png" alt="SoundVibe Logo" class="logo"/>
+        <h1>Welkom bij SoundVibe</h1>
+        <div id="user-info">
+            <img id="user-photo" class="user-photo" src="" alt="Profielfoto" style="display: none;" />
+            <p id="user-name"></p>
+        </div>
+        <input type="text" id="mood-input" placeholder="Waar heb je zin in?" />
+        <button id="generate-button">Genereer afspeellijst</button>
+        <div id="message" class="message"></div>
+        <a id="open-spotify" href="#" target="_blank" style="display:none;">
+            <button>Open in Spotify</button>
+        </a>
+        <div id="login-section">
+            <button id="login-button">Login met Spotify</button>
+        </div>
+    </div>
+</body>
+</html>
